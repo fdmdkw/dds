@@ -1,2 +1,2 @@
-import ddsTable
-ddsTable.ddsTable()
+import _ddsTable
+_ddsTable.ddsTable()
