@@ -2,7 +2,7 @@
 
 int main()
 {
-    ddsTable();
+    ddsTable("ddsDB.txt");
     return 0;
 }
 /* compile test.cpp
