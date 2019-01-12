@@ -1,0 +1,4 @@
+ddsTable.o: ddsTable.h dds.h ../include/portab.h ../include/dll.h
+ddsTable.o: SolverIF.h Memory.h TransTable.h TransTableS.h TransTableL.h
+ddsTable.o: Moves.h File.h debug.h SolveBoard.h System.h Scheduler.h
+ddsTable.o: TimeStatList.h TimeStat.h Timer.h PBN.h
