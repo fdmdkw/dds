@@ -21,7 +21,7 @@ create libddsTable.so
 activate venv
 
 #step 1 compile ddsTable.cpp
-g++ -fPIC -O3 -flto -fopenmp -mtune=generic -std=c++11 -fopenmp -lboost_system -lboost_thread -DDDS_THREADS_BOOST -DDDS_THREADS_OPENMP -DDDS_THREADS_STL ddsTable.cpp -c ddsTable.o
+g++ -fPIC -O3 -flto -fopenmp -Ofast -mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s -std=c++11  -lboost_system -lboost_thread -DDDS_THREADS_BOOST -DDDS_THREADS_OPENMP -DDDS_THREADS_STL ddsTable.cpp -c ddsTable.o
 
 #step 2 linking files
 g++ ddsTable.o hands.o -shared -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z -Wl,relro -fopenmp -lboost_system -lboost_thread -fPIC -L. -ldds -o libddsTable.so

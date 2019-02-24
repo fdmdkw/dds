@@ -8,7 +8,9 @@
 # If your compiler name is not given here, change it.
 CC		= g++
 
-CC_FLAGS	= -O3 -flto -mtune=generic -fopenmp
+#CC_FLAGS	= -O3 -flto -mtune=generic -fopenmp
+# raspberry pi
+CC_FLAGS = -O3 -flto -fopenmp -Ofast -mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s -std=c++11 
 
 # These flags are not turned on by default, but DDS should pass them.
 # Turn them on below.
@@ -38,7 +40,7 @@ WARN_FLAGS	= 		\
 	-Wno-format
 
 # Here you can turn on warnings.
-# CC_FULL_FLAGS	= $(CC_FLAGS)
+#CC_FULL_FLAGS	= $(CC_FLAGS)
 CC_FULL_FLAGS	= $(CC_FLAGS) $(WARN_FLAGS)
 
 DLLBASE		= dds
